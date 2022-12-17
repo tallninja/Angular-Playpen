@@ -13,7 +13,13 @@ export class AppComponent {
   symbols: boolean = false;
   password: string = '';
 
-  setLength(e: Event) {}
+  setLength(e: Event) {
+    const value = parseInt((e.target as HTMLInputElement).value);
+    if (!isNaN(value)) {
+      this.length = value;
+    }
+    console.info(this.length);
+  }
 
   setLetters() {
     this.letters = !this.letters;
