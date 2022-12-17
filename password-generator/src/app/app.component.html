@@ -1,4 +1,4 @@
-<h1>Password Generator</h1>
+<h1 class="text-2xl">Password Generator</h1>
 
 <label for="lengthInput">Enter the length</label>
 <input
@@ -43,7 +43,12 @@
   </ul>
 </div>
 
-<button (click)="generatePassword()">Generate</button>
+<button
+  (click)="generatePassword()"
+  [disabled]="!length || (!letters && !numbers && !symbols)"
+>
+  Generate
+</button>
 
 <div>
   <label for="generatedPasswordInput">Your password is: </label>
