@@ -1,7 +1,12 @@
 <h1>Password Generator</h1>
 
 <label for="lengthInput">Enter the length</label>
-<input type="text" id="lengthInput" (input)="setLength($event)" />
+<input
+  type="text"
+  id="lengthInput"
+  [value]="length"
+  (input)="setLength($event)"
+/>
 
 <div>
   <ul>
