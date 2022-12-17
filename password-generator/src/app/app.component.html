@@ -1,31 +1,48 @@
 <h1>Password Generator</h1>
 
 <label for="lengthInput">Enter the length</label>
-<input type="text" id="lengthInput">
-
+<input type="text" id="lengthInput" (input)="setLength($event)" />
 
 <div>
-<ul>
-  <li>
-    <input type="checkbox" name="letters" id="lettersCheckbox">
-    <label for="lettersCheckbox">Use Letters</label>
-  </li>
-  <li>
-    <input type="checkbox" name="numbers" id="numbersCheckbox">
-    <label for="numbersCheckbox">Use Numbers</label>
-  </li>
-  <li>
-    <input type="checkbox" name="special" id="specialCheckbox">
-    <label for="specialCheckbox">Use Special Characters</label>
-  </li>
-</ul>
+  <ul>
+    <li>
+      <input
+        type="checkbox"
+        name="letters"
+        id="lettersCheckbox"
+        (change)="setLetters()"
+        [checked]="letters"
+      />
+      <label for="lettersCheckbox">Use Letters</label>
+    </li>
+    <li>
+      <input
+        type="checkbox"
+        name="numbers"
+        id="numbersCheckbox"
+        (change)="setNumbers()"
+        [checked]="numbers"
+      />
+      <label for="numbersCheckbox">Use Numbers</label>
+    </li>
+    <li>
+      <input
+        type="checkbox"
+        name="special"
+        id="specialCheckbox"
+        (change)="setSymbols()"
+        [checked]="symbols"
+      />
+      <label for="specialCheckbox">Use Special Characters</label>
+    </li>
+  </ul>
 </div>
 
 <button (click)="generatePassword()">Generate</button>
 
 <div>
   <label for="generatedPasswordInput">Your password is: </label>
-  <input type="text" [value]="password">
+  <input type="text" [value]="password" />
 </div>
 
 {{ password }}
