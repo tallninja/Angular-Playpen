@@ -34,9 +34,21 @@ export class AppComponent {
   }
 
   generatePassword() {
-    this.password = 'PASSWORD';
-    console.info(this.letters);
-    console.info(this.numbers);
-    console.info(this.symbols);
+    const letters = 'abcdefghijklmnopqrstuvwxyz';
+    const numbers = '0123456789';
+    const symbols = '!@#$%^&*(){}[]?';
+    let validChars = '';
+    let generatedPassword = '';
+
+    if (this.letters) validChars += letters;
+    if (this.numbers) validChars += numbers;
+    if (this.symbols) validChars += symbols;
+
+    for (let i = 1; i <= this.length; i++) {
+      const index = Math.floor(Math.random() * validChars.length);
+      generatedPassword += validChars[index];
+    }
+
+    this.password = generatedPassword;
   }
 }
