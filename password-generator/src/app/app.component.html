@@ -1,56 +1,58 @@
-<h1 class="text-2xl">Password Generator</h1>
+<div class="flex flex-col align-middle">
+  <h1 class="text-2xl">Password Generator</h1>
 
-<label for="lengthInput">Enter the length</label>
-<input
-  type="text"
-  id="lengthInput"
-  [value]="length"
-  (input)="setLength($event)"
-/>
+  <label for="lengthInput">Enter the length</label>
+  <input
+    type="text"
+    id="lengthInput"
+    [value]="length"
+    (input)="setLength($event)"
+  />
 
-<div>
-  <ul>
-    <li>
-      <input
-        type="checkbox"
-        name="letters"
-        id="lettersCheckbox"
-        (change)="setLetters()"
-        [checked]="letters"
-      />
-      <label for="lettersCheckbox">Use Letters</label>
-    </li>
-    <li>
-      <input
-        type="checkbox"
-        name="numbers"
-        id="numbersCheckbox"
-        (change)="setNumbers()"
-        [checked]="numbers"
-      />
-      <label for="numbersCheckbox">Use Numbers</label>
-    </li>
-    <li>
-      <input
-        type="checkbox"
-        name="special"
-        id="specialCheckbox"
-        (change)="setSymbols()"
-        [checked]="symbols"
-      />
-      <label for="specialCheckbox">Use Special Characters</label>
-    </li>
-  </ul>
-</div>
+  <div>
+    <ul>
+      <li>
+        <input
+          type="checkbox"
+          name="letters"
+          id="lettersCheckbox"
+          (change)="setLetters()"
+          [checked]="letters"
+        />
+        <label for="lettersCheckbox">Use Letters</label>
+      </li>
+      <li>
+        <input
+          type="checkbox"
+          name="numbers"
+          id="numbersCheckbox"
+          (change)="setNumbers()"
+          [checked]="numbers"
+        />
+        <label for="numbersCheckbox">Use Numbers</label>
+      </li>
+      <li>
+        <input
+          type="checkbox"
+          name="special"
+          id="specialCheckbox"
+          (change)="setSymbols()"
+          [checked]="symbols"
+        />
+        <label for="specialCheckbox">Use Special Characters</label>
+      </li>
+    </ul>
+  </div>
 
-<button
-  (click)="generatePassword()"
-  [disabled]="!length || (!letters && !numbers && !symbols)"
->
-  Generate
-</button>
+  <button
+    (click)="generatePassword()"
+    [disabled]="!length || (!letters && !numbers && !symbols)"
+  >
+    Generate
+  </button>
 
-<div>
-  <label for="generatedPasswordInput">Your password is: </label>
-  <input type="text" [value]="password" disabled="true" />
+  <div>
+    <label for="generatedPasswordInput">Your password is: </label>
+    <input type="text" [value]="password" disabled="true" />
+  </div>
 </div>
