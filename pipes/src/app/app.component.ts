@@ -13,6 +13,7 @@ export class AppComponent {
   amount: number = 0;
   date: Date = new Date();
   decimal: number = 0;
+  speed: number = 0;
 
   onLowerChange(e: Event) {
     this.lowercaseText = (e.target as HTMLInputElement).value;
@@ -40,5 +41,9 @@ export class AppComponent {
 
   onDecimalChange(e: Event) {
     this.decimal = parseFloat((e.target as HTMLInputElement).value);
+  }
+
+  onSpeedChange(e: Event) {
+    this.speed = parseFloat((e.target as HTMLInputElement).value);
   }
 }

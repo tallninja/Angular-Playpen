@@ -133,6 +133,25 @@
             </h4>
           </div>
         </div>
+
+        <div class="flex justify-between items-end mt-5">
+          <div>
+            <label for="lc-input" class="text-lg text-gray-700 block"
+              >Enter Speed</label
+            >
+            <input
+              (input)="onSpeedChange($event)"
+              id="lc-input"
+              class="rounded-md h-7 border-2 px-3 py-4 my-2 text-gray-700 border-gray-200 focus:outline-none focus:border-gray-400"
+              type="number"
+            />
+          </div>
+          <div>
+            <h4 class="text-lg text-gray-700">
+              {{ speed | convert : "mps" | number : "1.0-2" }}
+            </h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>
